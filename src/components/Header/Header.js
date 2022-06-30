@@ -15,7 +15,7 @@ const Header = () => {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="ms-auto menu" navbarScroll>
                             <Link to='/home'>Completed Tasks</Link>
-                            <Link to='/home'>To-Do</Link>
+                            <Link to='/toDo'>To-Do</Link>
                             <Link to='/calendar'>Calendar</Link>
                         </Nav>
                     </Navbar.Collapse>

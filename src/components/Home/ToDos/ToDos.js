@@ -12,8 +12,6 @@ const ToDos = () => {
     }
     return (
         <div>
-            <h4>Add your tasks</h4>
-
            {
             toDos.map(toDo => <ToDo toDo={toDo}/>)
            }
