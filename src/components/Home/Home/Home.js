@@ -1,11 +1,11 @@
 import React from 'react';
-import ToDo from '../ToDo/ToDo';
+import ToDos from '../ToDos/ToDos';
 
 const Home = () => {
     return (
         <div>
             <div className="container">
-                <ToDo/>
+                <ToDos/>
             </div>
         </div>
     );

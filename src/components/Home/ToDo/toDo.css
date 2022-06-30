@@ -1,0 +1,11 @@
+.todo button{
+    background-color: transparent;
+    border: 0;
+}
+.done-btn{
+    font-size: 20px;
+    transition: .4s;
+}
+.done-btn:hover{
+    color: #4773fa;
+}
