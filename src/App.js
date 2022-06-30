@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
+import Home from './components/Home/Home/Home';
 
 function App() {
   return (
     <div style={{backgroundColor: '#EFFFFD'}}>
       <Header />
+      <Home/>
     </div>
   );
 }
