@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div style={{marginTop: '600px'}}>
             <div className="container">
                 <div className='d-flex justify-content-between'>
                     <p>Copyright &copy; 2022</p>

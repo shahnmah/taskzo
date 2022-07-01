@@ -5,7 +5,7 @@ import ToDo from '../ToDo/ToDo';
 
 
 const ToDos = () => {
-    const { data: toDos, isLoading, refetch } = useQuery(['toDos'], () => fetch('http://localhost:5000/task')
+    const { data: toDos, isLoading, refetch } = useQuery(['toDos'], () => fetch('https://arrogant-eds-13339.herokuapp.com/task')
         .then(res => res.json()))
     if (isLoading) {
         return <Loading />

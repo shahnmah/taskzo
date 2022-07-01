@@ -11,7 +11,7 @@ import CompletedTasks from './components/CompletedTasks/CompletedTasks';
 
 function App() {
   return (
-    <div style={{backgroundColor: '#EFFFFD', height: '100vh'}}>
+    <div style={{backgroundColor: '#EFFFFD'}}>
       <Header />
       <Routes>
           <Route path='/' element={<Home/>}/>

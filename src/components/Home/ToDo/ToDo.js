@@ -32,7 +32,7 @@ const ToDo = ({ toDo, refetch }) => {
 
     const handleSubmittedTask = (id, task) => {
         // delete task 
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://arrogant-eds-13339.herokuapp.com/task/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -41,14 +41,16 @@ const ToDo = ({ toDo, refetch }) => {
                 refetch()
             })
 
-        Swal.fire(
-            'Good job!',
-            'You completed the task!',
-            'success'
-        )
+        Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Good job',
+            showConfirmButton: false,
+            timer: 1500
+          })
 
         // add completed task
-        fetch('http://localhost:5000/completedTask', {
+        fetch('https://arrogant-eds-13339.herokuapp.com/completedTask', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
