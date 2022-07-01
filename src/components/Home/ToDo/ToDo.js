@@ -3,6 +3,8 @@ import './toDo.css'
 import { IoMdDoneAll } from "react-icons/io";
 import { BiEditAlt } from "react-icons/bi";
 import { GrUpdate } from "react-icons/gr";
+import Swal from 'sweetalert2'
+
 
 
 
@@ -37,6 +39,12 @@ const ToDo = ({ toDo, refetch }) => {
                 console.log(data);
                 refetch()
             })
+
+        Swal.fire(
+            'Good job!',
+            'You completed the task!',
+            'success'
+        )
     }
 
     return (
