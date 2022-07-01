@@ -9,7 +9,7 @@ const Header = () => {
             <Navbar bg="transparent" expand="lg">
                 <Container>
                     <Navbar.Brand href="#">
-                        <Link to='/home'><img src="https://i.ibb.co/VC2HChc/taskzo-logo.png" alt="logo" /></Link>
+                        <Link to='/home'><img className='w-75' src="https://i.ibb.co/VC2HChc/taskzo-logo.png" alt="logo" /></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">

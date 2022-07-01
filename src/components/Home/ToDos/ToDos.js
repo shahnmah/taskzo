@@ -5,7 +5,7 @@ import ToDo from '../ToDo/ToDo';
 
 
 const ToDos = () => {
-    const { data: toDos, isLoading } = useQuery(['toDos'], () => fetch('toDos.json')
+    const { data: toDos, isLoading, refetch } = useQuery(['toDos'], () => fetch('http://localhost:5000/task')
         .then(res => res.json()))
     if (isLoading) {
         return <Loading />
@@ -13,7 +13,7 @@ const ToDos = () => {
     return (
         <div>
            {
-            toDos.map(toDo => <ToDo toDo={toDo}/>)
+            toDos.map(toDo => <ToDo toDo={toDo} key={toDo._id} refetch={refetch}/>)
            }
         </div>
     );
