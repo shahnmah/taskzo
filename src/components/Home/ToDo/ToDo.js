@@ -30,7 +30,7 @@ const ToDo = ({ toDo, refetch }) => {
         console.log(value)
     }
 
-    const handleSubmittedTask = id => {
+    const handleSubmittedTask = (id, task) => {
         fetch(`http://localhost:5000/task/${id}`, {
             method: 'DELETE'
         })
@@ -45,11 +45,20 @@ const ToDo = ({ toDo, refetch }) => {
             'You completed the task!',
             'success'
         )
+
+        fetch('http://localhost:5000/completedTask',{
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+              },
+              body: JSON.stringify({task})
+        })
+       .then(res => res.json())
     }
 
     return (
         <div className="border d-flex justify-space-between my-3 todo">
-            <button onClick={(e) => handleSubmittedTask(_id)} className='done-btn px-3'><IoMdDoneAll /></button>
+            <button onClick={(e) => handleSubmittedTask(_id, task)} className='done-btn px-3'><IoMdDoneAll /></button>
             <input onKeyPress={(e) => e.key === 'Enter' && handleKeyPress} placeholder={task} disabled={disabled} />
             <button onClick={handleEdit}><BiEditAlt /></button>
             <button className={`${disabled ? "d-none" : "d-block"}`} onClick={handleUpdate}><GrUpdate /></button>
