@@ -13,22 +13,21 @@ const ToDo = ({ toDo, refetch }) => {
     const [value, setValue] = useState(`${task}`);
     const [disabled, setDisabled] = useState(true);
 
+    const handleSave = (val) => {
+        console.log('Edited Value -> ', val);
+        setValue(val);
+    };
     const handleEdit = () => {
         setDisabled(!disabled);
     }
-
-    const handleUpdate = (_id) => {
-        // const task = {value};
-        // fetch(`http://localhost:5000/taskCollection/${_id}`, {
-
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-type': 'application/json',
-        //     },
-        //     body:JSON.stringify(task),
-        // })
-        // .then(res=> res.json())
-        // .then(data => console.log(data))
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            console.log('enter press here! ')
+        }
+        console.log('event')
+    }
+    const handleUpdate = () => {
+        console.log(value)
     }
 
     const handleSubmittedTask = (id, task) => {
@@ -64,9 +63,9 @@ const ToDo = ({ toDo, refetch }) => {
     return (
         <div className="border d-flex justify-content-between my-3 todo">
             <button onClick={(e) => handleSubmittedTask(_id, task)} className='done-btn px-3'><IoMdDoneAll /></button>
-            <input onChange={(e) => setValue(e.target.value)} className='border-0 fs-5' placeholder={task} disabled={disabled} />
+            <input className='border-0 fs-5' onKeyPress={(e) => e.key === 'Enter' && handleKeyPress} placeholder={task} disabled={disabled} />
             <button onClick={handleEdit}><BiEditAlt /></button>
-            <button className={`${disabled ? "d-none" : "d-block"}`} onClick={(e) => handleUpdate(_id)}><GrUpdate /></button>
+            <button className={`${disabled ? "d-none" : "d-block"}`} onClick={handleUpdate}><GrUpdate /></button>
         </div>
     );
 };
